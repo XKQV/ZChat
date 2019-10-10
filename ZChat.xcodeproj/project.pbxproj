@@ -15,6 +15,7 @@
 		168F4DEC234F82F700ED2AA5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 168F4DEB234F82F700ED2AA5 /* main.m */; };
 		168F4DF6234F82F700ED2AA5 /* ZChatTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 168F4DF5234F82F700ED2AA5 /* ZChatTests.m */; };
 		168F4E01234F82F700ED2AA5 /* ZChatUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 168F4E00234F82F700ED2AA5 /* ZChatUITests.m */; };
+		168F4E10234F837700ED2AA5 /* ZCTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 168F4E0F234F837700ED2AA5 /* ZCTabBarViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,10 @@
 		168F4DFC234F82F700ED2AA5 /* ZChatUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZChatUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		168F4E00234F82F700ED2AA5 /* ZChatUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZChatUITests.m; sourceTree = "<group>"; };
 		168F4E02234F82F700ED2AA5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		168F4E0E234F837700ED2AA5 /* ZCTabBarViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZCTabBarViewController.h; sourceTree = "<group>"; };
+		168F4E0F234F837700ED2AA5 /* ZCTabBarViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZCTabBarViewController.m; sourceTree = "<group>"; };
+		168F4E13234F861000ED2AA5 /* ZCMacros.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZCMacros.h; sourceTree = "<group>"; };
+		168F4E14234F86A200ED2AA5 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +115,10 @@
 				168F4DE7234F82F700ED2AA5 /* LaunchScreen.storyboard */,
 				168F4DEA234F82F700ED2AA5 /* Info.plist */,
 				168F4DEB234F82F700ED2AA5 /* main.m */,
+				168F4E0E234F837700ED2AA5 /* ZCTabBarViewController.h */,
+				168F4E0F234F837700ED2AA5 /* ZCTabBarViewController.m */,
+				168F4E13234F861000ED2AA5 /* ZCMacros.h */,
+				168F4E14234F86A200ED2AA5 /* PrefixHeader.pch */,
 			);
 			path = ZChat;
 			sourceTree = "<group>";
@@ -194,6 +203,7 @@
 		168F4DD1234F82F600ED2AA5 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = ZC;
 				LastUpgradeCheck = 1030;
 				ORGANIZATIONNAME = XKQ;
 				TargetAttributes = {
@@ -265,6 +275,7 @@
 				168F4DE1234F82F600ED2AA5 /* ViewController.m in Sources */,
 				168F4DEC234F82F700ED2AA5 /* main.m in Sources */,
 				168F4DDE234F82F600ED2AA5 /* AppDelegate.m in Sources */,
+				168F4E10234F837700ED2AA5 /* ZCTabBarViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -436,6 +447,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				GCC_PREFIX_HEADER = ZChat/PrefixHeader.pch;
 				INFOPLIST_FILE = ZChat/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -452,6 +464,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				GCC_PREFIX_HEADER = ZChat/PrefixHeader.pch;
 				INFOPLIST_FILE = ZChat/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
