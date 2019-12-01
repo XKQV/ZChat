@@ -13,6 +13,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface ZCCacheManager : NSObject
 
+@property (strong, nonatomic) YYDiskCache *userDiskCache;
+
 + (instancetype)sharedInstance;
 
 + (void)saveData:(id)obj cacheKey:(NSString *)key;

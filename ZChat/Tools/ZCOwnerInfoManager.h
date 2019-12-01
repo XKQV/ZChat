@@ -15,6 +15,7 @@ static NSString *const ZCOwnerTokenRefreshedNotification = @"ZCOwnerTokenRefresh
 @interface ZCOwnerInfoManager : NSObject
 
 @property(nonatomic,copy)NSString *token;
+@property(nonatomic,copy)NSString *userID;
 
 + (instancetype)sharedInstance;
 

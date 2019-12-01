@@ -19,6 +19,7 @@
 		937E0118D92CF4B5938A4B5C /* libPods-ZChatTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C14B5DB83FCE36F60175B8C /* libPods-ZChatTests.a */; };
 		D064433C2A0A32C147A9F865 /* libPods-ZChat.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 200256D3432B0DEBB5C369FB /* libPods-ZChat.a */; };
 		EA170549238BD0B9008B3D54 /* ZCMainSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA170548238BD0B9008B3D54 /* ZCMainSearchViewController.m */; };
+		EA275FB9238E866000F2E2D4 /* UIImageView+ZCImageCache.m in Sources */ = {isa = PBXBuildFile; fileRef = EA275FB8238E866000F2E2D4 /* UIImageView+ZCImageCache.m */; };
 		EA37DF7F238BD6B60079FD0C /* ZCSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EAD74F43237D5A1C006FE656 /* ZCSearchViewController.m */; };
 		EA37DF82238BDD920079FD0C /* ZCSearchAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = EA37DF81238BDD920079FD0C /* ZCSearchAPI.m */; };
 		EA37DF8C238BE3100079FD0C /* NSString+ZCBaseUrlString.m in Sources */ = {isa = PBXBuildFile; fileRef = EA37DF8B238BE3100079FD0C /* NSString+ZCBaseUrlString.m */; };
@@ -91,6 +92,8 @@
 		DE7BF4B56DEE5CB636B894DC /* Pods-ZChatTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZChatTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ZChatTests/Pods-ZChatTests.debug.xcconfig"; sourceTree = "<group>"; };
 		EA170547238BD0B9008B3D54 /* ZCMainSearchViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZCMainSearchViewController.h; sourceTree = "<group>"; };
 		EA170548238BD0B9008B3D54 /* ZCMainSearchViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZCMainSearchViewController.m; sourceTree = "<group>"; };
+		EA275FB7238E866000F2E2D4 /* UIImageView+ZCImageCache.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImageView+ZCImageCache.h"; sourceTree = "<group>"; };
+		EA275FB8238E866000F2E2D4 /* UIImageView+ZCImageCache.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+ZCImageCache.m"; sourceTree = "<group>"; };
 		EA37DF80238BDD920079FD0C /* ZCSearchAPI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZCSearchAPI.h; sourceTree = "<group>"; };
 		EA37DF81238BDD920079FD0C /* ZCSearchAPI.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZCSearchAPI.m; sourceTree = "<group>"; };
 		EA37DF89238BDFFD0079FD0C /* ZCNetworkDefine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZCNetworkDefine.h; sourceTree = "<group>"; };
@@ -347,6 +350,8 @@
 				EA37DF89238BDFFD0079FD0C /* ZCNetworkDefine.h */,
 				EA37DF8A238BE3100079FD0C /* NSString+ZCBaseUrlString.h */,
 				EA37DF8B238BE3100079FD0C /* NSString+ZCBaseUrlString.m */,
+				EA275FB7238E866000F2E2D4 /* UIImageView+ZCImageCache.h */,
+				EA275FB8238E866000F2E2D4 /* UIImageView+ZCImageCache.m */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -588,6 +593,7 @@
 				EAD6A953238BBE240048D6C6 /* ZCBaseTableViewCell.m in Sources */,
 				EA37DFC1238D59BE0079FD0C /* ZDSearchPersonModel.m in Sources */,
 				EA37DF9E238D063D0079FD0C /* ZCLoginApi.m in Sources */,
+				EA275FB9238E866000F2E2D4 /* UIImageView+ZCImageCache.m in Sources */,
 				EAD74F41237D5735006FE656 /* ZCChatHeaderView.m in Sources */,
 				EAAFB065237D44190045A197 /* ZCNavigationController.m in Sources */,
 				EA37DF9A238BFA630079FD0C /* ZCAppDelegateCommandRefreshToken.m in Sources */,

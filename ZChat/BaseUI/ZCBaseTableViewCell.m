@@ -38,7 +38,6 @@
     [self.nameLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(@15);
         make.leading.equalTo(self.iconImageView.mas_trailing).offset(10);
-        make.trailing.equalTo(@-15);
     }];
     
     self.timeLabel.text = @"1111";
@@ -52,6 +51,7 @@
     self.positionCompanyLabel.text = @"1111";
     [self.positionCompanyLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.nameLabel.mas_bottom);
+        make.height.equalTo(@20);
         make.leading.equalTo(self.nameLabel.mas_leading);
         make.trailing.equalTo(@-15);
         make.bottom.equalTo(@-15);
@@ -60,9 +60,11 @@
 
 - (UIImageView *)iconImageView {
     if (!_iconImageView) {
-        _iconImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 46, 46)];
+        _iconImageView = [[UIImageView alloc] initWithFrame:CGRectZero];
         _iconImageView.layer.cornerRadius = 2;
         _iconImageView.contentMode = UIViewContentModeScaleAspectFill;
+        _iconImageView.clipsToBounds = YES;
+        _iconImageView.layer.masksToBounds = YES;
     }
     return _iconImageView;
 }

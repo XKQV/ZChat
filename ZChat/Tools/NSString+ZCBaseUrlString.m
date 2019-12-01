@@ -14,6 +14,10 @@
     return @"https://ss-sandbox.intsig.net";
 }
 
++ (NSString *)baseImageString {
+    return @"https://ssimg-pre.intsig.net/yemai/vip/camfs/qxb";
+}
+
 + (NSString *)getURLStringWithAPIType:(ZCHttpAPIType)apiType url:(NSString *)url {
     NSString *urlString = nil;
     switch (apiType) {

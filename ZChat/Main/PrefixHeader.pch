@@ -7,9 +7,12 @@
 //
 
 #import "ZCMacros.h"
-#import "Masonry.h"
-#import "AFURLSessionManager.h"
+#import <Masonry.h>
+#import <YYModel.h>
+
+
 #import "ZCNetworkRequest.h"
 #import "ZCOwnerInfoManager.h"
-#import "YYModel.h"
 #import "ZCCacheManager.h"
+#import "UIImageView+ZCImageCache.h"
+
