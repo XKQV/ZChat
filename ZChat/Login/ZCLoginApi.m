@@ -17,8 +17,11 @@
  
     
     [ZCNetworkRequest getRequestWithUrlString:[NSString getURLStringWithAPIType:ZDHttpAPITypeUAPI url:@"login"] urlParameter:params withResponseHandler:^(NSDictionary * _Nonnull data, NSError * _Nonnull error) {
+        [ZCOwnerInfoManager sharedInstance].userID = data[@"data"][@"user_id"];
         [ZCOwnerInfoManager sharedInstance].token = data[@"data"][@"token"];
     }];
 }
 
+// 拿个人信息
+//query_profile
 @end

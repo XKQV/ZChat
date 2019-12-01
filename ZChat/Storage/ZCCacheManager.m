@@ -10,7 +10,7 @@
 
 @interface ZCCacheManager ()
 
-@property (strong, nonatomic) YYDiskCache *userDiskCache;
+
 
 @end
 

@@ -24,6 +24,8 @@ typedef NS_ENUM(NSInteger, ZCHttpAPIType) {
 
 - (NSString *)addParameter:(NSDictionary *)parameter;
 
++ (NSString *)baseImageString;
+
 @end
 
 NS_ASSUME_NONNULL_END

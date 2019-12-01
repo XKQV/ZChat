@@ -9,6 +9,7 @@
 
 #import "ZCNetworkRequest.h"
 #import "NSString+ZCBaseUrlString.h"
+#import <AFNetworking.h>
 
 @implementation ZCNetworkRequest
 

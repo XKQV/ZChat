@@ -10,7 +10,7 @@
 #import "ZCSearchAPI.h"
 #import "ZDSearchPersonModel.h"
 
-static const NSString *RecommendPersonCacheKey = @"RecommendPersonCacheKey";
+static NSString *const RecommendPersonCacheKey = @"RecommendPersonCacheKey";
 
 @implementation ZCMainSearchPresentor
 
@@ -28,6 +28,10 @@ static const NSString *RecommendPersonCacheKey = @"RecommendPersonCacheKey";
         if (self.delegate && [self.delegate respondsToSelector:@selector(reloadUI)]) {
             [self.delegate reloadUI];
         }
+        
+        NSString *cacheKey = [RecommendPersonCacheKey stringByAppendingString:[ZCOwnerInfoManager sharedInstance].userID];
+        
+        [ZCCacheManager saveData:data cacheKey:cacheKey];
         
     }];
 }
