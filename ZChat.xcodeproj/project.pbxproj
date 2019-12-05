@@ -37,6 +37,7 @@
 		EA37DFC4238E62FB0079FD0C /* ZCCacheManager.m in Sources */ = {isa = PBXBuildFile; fileRef = EA37DFC3238E62FB0079FD0C /* ZCCacheManager.m */; };
 		EAAFB062237D431C0045A197 /* ZCChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EAAFB061237D431C0045A197 /* ZCChatViewController.m */; };
 		EAAFB065237D44190045A197 /* ZCNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = EAAFB064237D44190045A197 /* ZCNavigationController.m */; };
+		EABD1E4E2398D795004CF317 /* UIViewController+ZCTopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EABD1E4D2398D795004CF317 /* UIViewController+ZCTopViewController.m */; };
 		EAD6A953238BBE240048D6C6 /* ZCBaseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EAD6A952238BBE240048D6C6 /* ZCBaseTableViewCell.m */; };
 		EAD6A956238BC53A0048D6C6 /* ZCNetworkRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = EAD6A955238BC53A0048D6C6 /* ZCNetworkRequest.m */; };
 		EAD74F41237D5735006FE656 /* ZCChatHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = EAD74F40237D5735006FE656 /* ZCChatHeaderView.m */; };
@@ -129,6 +130,8 @@
 		EAAFB061237D431C0045A197 /* ZCChatViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZCChatViewController.m; sourceTree = "<group>"; };
 		EAAFB063237D44190045A197 /* ZCNavigationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZCNavigationController.h; sourceTree = "<group>"; };
 		EAAFB064237D44190045A197 /* ZCNavigationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZCNavigationController.m; sourceTree = "<group>"; };
+		EABD1E4C2398D78E004CF317 /* UIViewController+ZCTopViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+ZCTopViewController.h"; sourceTree = "<group>"; };
+		EABD1E4D2398D795004CF317 /* UIViewController+ZCTopViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+ZCTopViewController.m"; sourceTree = "<group>"; };
 		EAD6A951238BBE240048D6C6 /* ZCBaseTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZCBaseTableViewCell.h; sourceTree = "<group>"; };
 		EAD6A952238BBE240048D6C6 /* ZCBaseTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZCBaseTableViewCell.m; sourceTree = "<group>"; };
 		EAD6A954238BC53A0048D6C6 /* ZCNetworkRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZCNetworkRequest.h; sourceTree = "<group>"; };
@@ -339,6 +342,8 @@
 		EAD6A957238BC5430048D6C6 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				EABD1E4C2398D78E004CF317 /* UIViewController+ZCTopViewController.h */,
+				EABD1E4D2398D795004CF317 /* UIViewController+ZCTopViewController.m */,
 				EA37DFA9238D183A0079FD0C /* TVDataSource.h */,
 				EA37DFAA238D183A0079FD0C /* TVDataSource.m */,
 				EA37DFAF238D1A0E0079FD0C /* ZCPresentorProtocol.h */,
@@ -588,6 +593,7 @@
 				168F4DE1234F82F600ED2AA5 /* ViewController.m in Sources */,
 				EAAFB062237D431C0045A197 /* ZCChatViewController.m in Sources */,
 				EA170549238BD0B9008B3D54 /* ZCMainSearchViewController.m in Sources */,
+				EABD1E4E2398D795004CF317 /* UIViewController+ZCTopViewController.m in Sources */,
 				EA37DF8C238BE3100079FD0C /* NSString+ZCBaseUrlString.m in Sources */,
 				EA37DFA1238D12080079FD0C /* ZCOwnerInfoManager.m in Sources */,
 				EAD6A953238BBE240048D6C6 /* ZCBaseTableViewCell.m in Sources */,
