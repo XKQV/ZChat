@@ -21,7 +21,7 @@ static NSString *const ZCOwnerTokenRefreshedNotification = @"ZCOwnerTokenRefresh
 
 + (NSString *)ownerToken;
 
-+ (NSDictionary *)requestTokenDict;
++ (NSMutableDictionary *)requestTokenDict;
 
 @end
 

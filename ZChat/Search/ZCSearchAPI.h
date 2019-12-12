@@ -13,7 +13,9 @@ NS_ASSUME_NONNULL_BEGIN
 @interface ZCSearchAPI : NSObject
 
 - (void)getMainRecommendPersonWithHandler:(ZCReponseHandler)handler;
-    
+
+- (void)getSearchResultsWithKeywords:(NSString *)keywords handler:(ZCReponseHandler)handler;
+
 @end
 
 NS_ASSUME_NONNULL_END

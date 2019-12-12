@@ -11,7 +11,8 @@
 @implementation NSString (ZCBaseUrlString)
 
 + (NSString *)baseDomain {
-    return @"https://ss-sandbox.intsig.net";
+//    return @"https://ss-sandbox.intsig.net";
+    return @"https://ss-pre.intsig.net";
 }
 
 + (NSString *)baseImageString {

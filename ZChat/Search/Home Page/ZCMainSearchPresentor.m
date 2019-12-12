@@ -24,7 +24,7 @@ static NSString *const RecommendPersonCacheKey = @"RecommendPersonCacheKey";
 - (void)loadRecommandPerson {
     ZCSearchAPI *api = [[ZCSearchAPI alloc] init];
     [api getMainRecommendPersonWithHandler:^(id data, NSError *error) {
-        self.recommendPersonArray = [NSArray yy_modelArrayWithClass:[ZDSearchPersonModel class] json:data[@"data"][@"list"]];
+        self.recommendPersonArray = [NSArray yy_modelArrayWithClass:[ZDSearchPersonModel class] json:data[@"list"]];
         if (self.delegate && [self.delegate respondsToSelector:@selector(reloadUI)]) {
             [self.delegate reloadUI];
         }

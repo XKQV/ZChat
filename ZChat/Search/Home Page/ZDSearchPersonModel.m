@@ -84,6 +84,8 @@ static NSString *const ZDMainRecmdRelationTagType = @"relation_tag";
              @"connectionInfo": @"connection_renmai_info",
              @"recmdTags": @"tags",
              @"connectionStatus": @"is_contact",
+             @"avatar" : @"logo",
+             @"cid" : @"id",
              };
 }
 

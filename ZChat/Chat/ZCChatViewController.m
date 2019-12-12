@@ -8,7 +8,7 @@
 //
 
 #import "ZCChatViewController.h"
-#import "ZCSearchViewController.h"
+#import "ZCSearchResultViewController.h"
 
 @interface ZCChatViewController ()
 
@@ -21,7 +21,6 @@
 - (void)loadView {
     [super loadView];
     self.navigationController.title = @"找到";
-    self.navigationItem.searchController = [[ZCSearchViewController alloc] init];
     UIBarButtonItem *moreItem = [[UIBarButtonItem alloc] initWithTitle:@"更多" style:UIBarButtonItemStyleDone target:self action:@selector(moreAction)];
     self.navigationItem.rightBarButtonItem = moreItem;
     self.navigationController.navigationBar.translucent = NO;
@@ -48,7 +47,7 @@
     if (!_tableView) {
         _tableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStylePlain];
 //
-//        _tableView.tableHeaderView = [[ZCSearchViewController alloc] init].searchBar;
+//        _tableView.tableHeaderView = [[ZCSearchResultViewController alloc] init].searchBar;
     }
     return _tableView;
 }

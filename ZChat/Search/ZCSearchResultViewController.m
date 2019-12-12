@@ -1,17 +1,19 @@
 //
-//  ZCSearchViewController.m
+//  ZCSearchResultViewController.m
 //  ZChat
 //
 //  Created by 董志玮 on 2019/11/14.
 //  Copyright © 2019 XKQ. All rights reserved.
 //
 
-#import "ZCSearchViewController.h"
+#import "ZCSearchResultViewController.h"
+#import "ZCSearchAPI.h"
+#import "ZDSearchPersonModel.h"
 
-@interface ZCSearchViewController ()<UITableViewDelegate,UITableViewDataSource,UISearchResultsUpdating,UISearchControllerDelegate>
+@interface ZCSearchResultViewController ()<UITableViewDelegate,UITableViewDataSource,UISearchResultsUpdating,UISearchControllerDelegate>
 
 // 全部的数据源数组
-@property (strong, nonatomic) NSArray *dataArr;
+@property (strong, nonatomic) NSArray <ZDSearchPersonModel *>*dataArray;
 // 搜索结果的数据源数组:搜索结果在本控制器展示的时候根据searchController的激活状态判断展示此数组还是dataArr数组
 @property (strong, nonatomic) NSMutableArray *resultArrM;
 
@@ -24,12 +26,17 @@
 
 @end
 
-@implementation ZCSearchViewController
+@implementation ZCSearchResultViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self configureUI];
-    self.dataArr = @[@"hi", @"hi", @"hi", @"hi",];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self.navigationController.view layoutSubviews];
+    [self.view layoutSubviews];
 }
 
 - (void)configureUI {
@@ -37,7 +44,7 @@
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     [self.view addSubview:self.tableView];
-    self.searchController.searchBar.frame = CGRectMake(0, 0, kScreenWidth, 44);
+    self.searchController.searchBar.frame = CGRectMake(0, 20, kScreenWidth, 44);
 }
 
 - (UISearchController *)searchController{
@@ -47,7 +54,7 @@
          1、可以传nil，展示在当前控制器，根据searchController.isActive判断，如果是激活状态就使用搜索结果数组作为数据源，否则用全部数的数组作为数据源
          2、也可以单独创建一个控制器作为搜索结果的展示界面，将搜索结果传递到展示的控制器进行展示和数据操作等
          */
-        _searchController = [[UISearchController alloc]initWithSearchResultsController:nil];
+        _searchController = [[UISearchController alloc] initWithSearchResultsController:nil];
         _searchController.searchResultsUpdater = self;
         _searchController.delegate = self;
         self.definesPresentationContext = YES;
@@ -55,7 +62,7 @@
         _searchController.obscuresBackgroundDuringPresentation = YES;
         // 是否隐藏导航栏
         _searchController.hidesNavigationBarDuringPresentation = YES;
-
+        
         // 可以通过此种方式修改searchBar的背景颜色
         /*
         _searchController.searchBar.barTintColor = [UIColor redColor];
@@ -100,18 +107,19 @@
 
 // 开始进行搜索
 - (void)updateSearchResultsForSearchController:(UISearchController *)searchController{
-
-    [self.resultArrM removeAllObjects];
-
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF CONTAINS[c] %@",searchController.searchBar.text];
-    self.resultArrM = [NSMutableArray arrayWithArray:[self.dataArr filteredArrayUsingPredicate:predicate]];
-
-//    // 将关键词传入结果控制器可以在展示的时候通过富文本将关键词变成特别的样式
-//    self.resultVC.keyWord = searchController.searchBar.text;
-//    self.resultVC.resultArr = self.resultArrM.copy;
-
-    // 如果展示在当前控制器则刷新界面
-    [self.tableView reloadData];
+    if (searchController.searchBar.searchTextField.markedTextRange != nil) {
+        return;
+    }
+    NSString *keywords = searchController.searchBar.text;
+    if (keywords.length < 2) {
+        return;
+    }
+    
+    ZCSearchAPI *api = [[ZCSearchAPI alloc] init];
+    [api getSearchResultsWithKeywords:keywords handler:^(id data, NSError *error) {
+        self.dataArray = [NSArray yy_modelArrayWithClass:[ZDSearchPersonModel class] json:data[@"company"][@"items"]];
+        [self.tableView reloadData];
+    }];
 }
 
 - (void)willPresentSearchController:(UISearchController *)searchController{
@@ -131,7 +139,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 //    return self.searchController.isActive ? self.resultArrM.count : self.dataArr.count;
-    return self.dataArr.count;
+    return self.dataArray.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -141,13 +149,14 @@
         cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:ID];
     }
     // 如果将搜索结果展示当前界面可以根据searchController是激活状态来判断展示结果
-    if (self.searchController.isActive) {
-        cell.textLabel.text = self.resultArrM[indexPath.row];
-    }else{
-        cell.textLabel.text = self.dataArr[indexPath.row];
-    }
-
-    cell.textLabel.text = self.dataArr[indexPath.row];
+    //    if (self.searchController.isActive) {
+    cell.textLabel.text = self.dataArray[indexPath.row].name;
+    [cell.imageView zc_setImageWithURLString:self.dataArray[indexPath.row].avatar];
+    cell.imageView.bounds = CGRectMake(0, 0, 30, 30);
+//    }
+//    else{
+//        cell.textLabel.text = self.dataArray[indexPath.row];
+//    }
     return cell;
 }
 

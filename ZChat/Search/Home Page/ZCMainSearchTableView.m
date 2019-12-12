@@ -34,11 +34,10 @@ static NSString *const reuserId = @"reuserId";
 - (void)setupTableView {
     
     self.presentor = [[ZCMainSearchPresentor alloc] init];
-    self.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
     self.tableViewDataSource = [[ZCMainSearchDataSource alloc] initWithIdentifier:reuserId configureBlock:^(ZCMainSearchTableViewCell *cell, ZDSearchPersonModel *model, NSIndexPath *indexpath) {
         cell.nameLabel.text = model.name;
         cell.positionCompanyLabel.text = [NSString stringWithFormat:@"%@ | %@", model.company, model.position];
-        [cell.imageView zc_setImageWithURLString:model.avatar];
+        [cell.iconImageView zc_setImageWithURLString:model.avatar];
     } selectedBlock:^(NSIndexPath * _Nonnull indexPath) {
     
     } refreshBlock:^{

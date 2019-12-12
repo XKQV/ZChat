@@ -21,7 +21,21 @@
             }
         }
     }];
-    
+}
+
+- (void)getSearchResultsWithKeywords:(NSString *)keywords handler:(ZCReponseHandler)handler {
+    NSString *url = [NSString getURLStringWithAPIType:ZDHttpAPITypeSAPI url:@"CCAppService/zdao/multiSearch"];
+    NSMutableDictionary *tokenDict = [ZCOwnerInfoManager requestTokenDict];
+    [tokenDict addEntriesFromDictionary:@{@"keyword" : keywords, @"from_type": @"zdao"}];
+    url = [url addParameter:tokenDict];
+    [ZCNetworkRequest getRequestWithUrlString:url withResponseHandler:^(NSDictionary * _Nonnull data, NSError * _Nonnull error) {
+        if (data && !error) {
+            NSLog(@"%@",data);
+            if (handler) {
+                handler(data, error);
+            }
+        }
+    }];
 }
 
 @end

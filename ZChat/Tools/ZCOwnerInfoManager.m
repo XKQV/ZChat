@@ -28,8 +28,8 @@
     [[NSNotificationCenter defaultCenter] postNotificationName:ZCOwnerTokenRefreshedNotification object:nil userInfo:nil];
 }
 
-+ (NSDictionary *)requestTokenDict {
-    return @{@"token" : [ZCOwnerInfoManager ownerToken] ?: @""};
++ (NSMutableDictionary *)requestTokenDict {
+    return @{@"token" : [ZCOwnerInfoManager ownerToken] ?: @""}.mutableCopy;
 }
 
 @end

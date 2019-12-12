@@ -27,7 +27,7 @@
     [[manager dataTaskWithRequest:request uploadProgress:nil downloadProgress:nil completionHandler:^(NSURLResponse * _Nonnull response, id  _Nullable responseObject, NSError * _Nullable error) {
         NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableContainers error:nil];
         if (handler) {
-            handler(dict, error);
+            handler(dict[@"data"], error);
         }
     }] resume];
 }
@@ -46,7 +46,7 @@
            if (responseObject) {
                NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableContainers error:nil];
                if (handler) {
-                   handler(dict, error);
+                   handler(dict[@"data"], error);
                }
            }
        }] resume];

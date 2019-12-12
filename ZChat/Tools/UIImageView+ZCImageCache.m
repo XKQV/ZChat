@@ -15,9 +15,8 @@
     
     NSURL *imageUrl = [NSURL URLWithString:[NSString stringWithFormat:@"%@/%@%@",[NSString baseImageString], urlString, @".t190u"]];
     NSString *cacheString = [[SDWebImageManager sharedManager] cacheKeyForURL:imageUrl];
-//    UIImage *
-    
-    [self sd_setImageWithURL:imageUrl placeholderImage:[UIImage imageNamed:@"google"]];
+    [self sd_setImageWithURL:imageUrl placeholderImage:ZCDefaultCompanyLogo()];
+
 }
 
 @end

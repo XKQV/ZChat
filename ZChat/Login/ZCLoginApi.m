@@ -17,8 +17,8 @@
  
     
     [ZCNetworkRequest getRequestWithUrlString:[NSString getURLStringWithAPIType:ZDHttpAPITypeUAPI url:@"login"] urlParameter:params withResponseHandler:^(NSDictionary * _Nonnull data, NSError * _Nonnull error) {
-        [ZCOwnerInfoManager sharedInstance].userID = data[@"data"][@"user_id"];
-        [ZCOwnerInfoManager sharedInstance].token = data[@"data"][@"token"];
+        [ZCOwnerInfoManager sharedInstance].userID = data[@"user_id"];
+        [ZCOwnerInfoManager sharedInstance].token = data[@"token"];
     }];
 }
 

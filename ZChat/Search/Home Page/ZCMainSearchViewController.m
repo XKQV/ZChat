@@ -7,7 +7,7 @@
 //
 
 #import "ZCMainSearchViewController.h"
-#import "ZCSearchViewController.h"
+#import "ZCSearchResultViewController.h"
 #import "ZCMainSearchTableView.h"
 
 @interface ZCMainSearchViewController ()
@@ -21,24 +21,28 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.navigationItem.searchController = [[ZCSearchViewController alloc] init];
-    self.navigationController.navigationBar.translucent = NO;
-    self.tabBarController.tabBar.translucent = NO;
     self.tableView = [[ZCMainSearchTableView alloc] initWithFrame:CGRectZero style:UITableViewStylePlain];
     [self.view addSubview:self.tableView];
     [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(self.view);
     }];
+    
+    ZCSearchResultViewController *searchResultViewController = [[ZCSearchResultViewController alloc] init];
+    UISearchController *searchController = [[UISearchController alloc] initWithSearchResultsController:searchResultViewController];
+    self.navigationItem.searchController = searchController;
+    
+    searchController.searchBar.placeholder = @"Search";
+    searchController.searchResultsUpdater = searchResultViewController;
+
 }
 
-- (UIView *)searchBarView {
-    if (!_searchBarView) {
-        ZCSearchViewController *searchViewController = [[ZCSearchViewController alloc] init];
-        _searchBarView = searchViewController.searchBar;
-        _searchBarView.tintColor = [UIColor clearColor];
-        _searchBarView.userInteractionEnabled = YES;
-    }
-    return _searchBarView;
-}
+//- (UIView *)searchBarView {
+//    if (!_searchBarView) {
+//        ZCSearchResultViewController *searchViewController = [[ZCSearchResultViewController alloc] init];
+//        _searchBarView.tintColor = [UIColor clearColor];
+//        _searchBarView.userInteractionEnabled = YES;
+//    }
+//    return _searchBarView;
+//}
 
 @end
